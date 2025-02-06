@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Dancing+Script:wght@400..700&display=swap');
+.valentine-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(5px);
+    z-index: 1000;
+}
+
+.valentine-modal-content {
+    background: #fffaf0;
+    padding: 2rem;
+    border-radius: 15px;
+    max-width: 600px;
+    width: 90%;
+    box-shadow: 0 0 20px rgba(0,0,0,0.2);
+    border: 2px solid #e91e63;
+    position: relative;
+    font-family: 'Caveat', cursive;
+}
+
+.modal-title {
+    color: #e91e63;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.link-container {
+    display: flex;
+    gap: 1rem;
+    margin: 1.5rem 0;
+}
+
+.link-input {
+    flex: 1;
+    padding: 0.8rem;
+    border: 2px solid #e91e63;
+    border-radius: 8px;
+    font-family: 'Caveat', cursive;
+    font-size: 1.2rem;
+    background: white;
+}
+
+.copy-button {
+    background: #e91e63;
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Caveat', cursive;
+    font-size: 1.2rem;
+}
+
+.copy-button:hover {
+    background: #c2185b;
+    transform: scale(1.05);
+}
+
+.close-button {
+    background: #666;
+    color: white;
+    padding: 0.8rem 2rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 1rem;
+    transition: all 0.3s ease;
+}
+
+.close-button:hover {
+    background: #444;
+    transform: translateY(-2px);
+}
+
+.container {
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 2rem;
+    text-align: center;
+  }
+  
+  .button-group {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin: 2rem 0;
+  }
+  
+  .primary-btn {
+    background: #e91e63;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+  }
+  
+  .secondary-btn {
+    background: #ffffff;
+    color: #e91e63;
+    padding: 12px 24px;
+    border: 2px solid #e91e63;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  
+  .message-preview {
+    background: #fff5f8;
+    padding: 1.5rem;
+    border-radius: 12px;
+    min-height: 100px;
+    margin: 2rem 0;
+  }
+  
+  .placeholder {
+    color: #888;
+    font-style: italic;
+  }
