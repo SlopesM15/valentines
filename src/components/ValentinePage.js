@@ -7,6 +7,7 @@ import foxbutt from "../assets/foxbutt.svg";
 import foxBlush from "../assets/foxblush.svg";
 import foxSad from "../assets/foxsad.svg";
 import foxAngry from "../assets/foxmad.svg";
+import LZString from "lz-string";
 const ValentineCard = () => {
   const [noClickCount, setNoClickCount] = useState(0);
   const foxStates = [foxoverletter, foxBlush, foxSad, foxAngry];
@@ -20,9 +21,11 @@ const ValentineCard = () => {
   const noButtonRef = useRef(null);
   const [isPositioned, setIsPositioned] = useState(false);
   useEffect(() => {
-    const urlMessage = searchParams.get("message");
-    if (urlMessage) {
-      setMessage(decodeURIComponent(urlMessage));
+    const compressedMessage = searchParams.get("message");
+    if (compressedMessage) {
+      const decompressed =
+        LZString.decompressFromEncodedURIComponent(compressedMessage);
+      setMessage(decompressed || "Will you be my Valentine?");
     }
   }, [searchParams]);
   const handleNoClick = () => {

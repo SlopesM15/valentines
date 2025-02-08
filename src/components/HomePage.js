@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./HomePage.css";
-
+import LZString from "lz-string";
 const HomePage = () => {
   const [isExpanded, setIsExpanded] = useState(false);
   const [message, setMessage] = useState(
@@ -26,9 +26,11 @@ const HomePage = () => {
 
   const generateLink = () => {
     const id = crypto.randomUUID();
-    const link = `${
-      window.location.origin
-    }/valentine/${id}?message=${encodeURIComponent(message)}`;
+    // const link = `${
+    //   window.location.origin
+    // }/valentine/${id}?message=${encodeURIComponent(message)}`;
+    const compressedMessage = LZString.compressToEncodedURIComponent(message);
+    const link = `${window.location.origin}/valentine/${id}?message=${compressedMessage}`;
     setGeneratedLink(link);
     setShowPopup(true);
   };
